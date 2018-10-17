@@ -11,7 +11,7 @@ syscall
 li $v0, 5
 syscall
 
-move $a0, $v0
+move $a0, $v0 #N
 jal fibo
 
 #####
@@ -19,11 +19,13 @@ jal fibo
 #####
 
 fibo:
-bgt $v0 1 recur
-li $3 1
-jr $ra
+beq $a0, 1, return 1
+beq $a0, $zero, return 0
+
 
 recur:
 sub $sp $sp 8
 sw $ra 4($sp)
 sw $a0 ($sp)
+sub $a0 $a0 1 #n = n-1
+jal fibo
