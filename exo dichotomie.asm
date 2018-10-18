@@ -20,13 +20,19 @@ move $a0, $v0
 #fin = $t5
 #resultat = $a1
 ############
-
+li $t8, 2
 li $t5, 10
 do:
 
 add $t7, $t6, $t5
-srl $t7, $t7, 1
+div $t7, $t8
+mflo $t7
 
+mfhi $t9
+
+bne $t9, $zero, correctionmilieu
+
+suite:
 la $t3, list # met l’adresse de list dans $t3
 move $t2, $t7 # met milieu dans $t2
 sll $t2, $t2, 2 # t2= t2*4
@@ -61,3 +67,7 @@ syscall
 #sortie du programme
 li $v0, 10
 syscall
+
+correctionmilieu:
+add $t7, $t7, 1
+j suite
