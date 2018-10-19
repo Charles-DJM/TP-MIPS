@@ -1,5 +1,5 @@
 .data
-list: .word 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10
+list: .word 0, 1, 2, 3, 4, 5, 6, 7, 8, 9
 msg1: .asciiz "Entrez un la valeur : "
 .text
 
@@ -21,6 +21,7 @@ move $a0, $v0
 #resultat = $a1
 ############
 li $t8, 2
+li $t6, 0
 li $t5, 10
 do:
 
@@ -42,14 +43,14 @@ lw $t4, 0($t1) # stocke la valeur de list[milieu]
 beq $t4, $a0 returnindex
 
 ble $a0, $t4 else
-add $t6, $t7, 1
+addi $t6, $t7, 1
 j while
 
 else:
-sub $t5, $t7, 1
+subi $t5, $t7, 1
 j while
 while:
-blt $t6, $t5 do
+ble $t6, $t5 do
 
 li $a1, -1
 j fin
@@ -69,5 +70,5 @@ li $v0, 10
 syscall
 
 correctionmilieu:
-add $t7, $t7, 1
+addi $t7, $t7, 1
 j suite
