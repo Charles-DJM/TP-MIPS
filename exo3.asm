@@ -1,3 +1,7 @@
+#############################
+#DHONT Florent              #
+#de JAHAM Charles           #
+#############################
 .text
 main:
 # Print msg1
@@ -43,6 +47,6 @@ syscall
 #
 # Start .data segment (data!)
 .data
-msg1: .asciiz "Number of integers (N)? "
-msg2: .asciiz "Sum = "
+msg1: .asciiz "Entrez n"
+msg2: .asciiz "Factoriel n = "
 lf: .asciiz "\n"

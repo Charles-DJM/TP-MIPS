@@ -1,3 +1,10 @@
+#############################
+#DHONT Florent              #
+#de JAHAM Charles           #
+#############################
+#Exercice 5 prenant en compte les délais de branchemenents
+#######################
+
 .data
 msg1: .asciiz "Entrer nombre n \n "
 msg2: .asciiz "resultat \n "

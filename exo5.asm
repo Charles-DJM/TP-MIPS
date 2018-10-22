@@ -1,6 +1,10 @@
+#############################
+#DHONT Florent              #
+#de JAHAM Charles           #
+#############################
 .data
 msg1: .asciiz "Entrer nombre n \n "
-msg2: .asciiz "resultat \n "
+msg2: .asciiz "Factoriel n = \n "
 
 .text
 

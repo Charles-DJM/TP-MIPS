@@ -1,3 +1,12 @@
+#############################
+#DHONT Florent              #
+#de JAHAM Charles           #
+#                           #
+#Que fait ce programme ?    #
+#Somme les nombres de 0 à N #
+#############################
+
+
 .text
 main:
 # Print msg1
